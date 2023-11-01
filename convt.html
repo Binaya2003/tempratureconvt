@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Temperature Converter</h1>
+        <input type="text" id="celsius" placeholder="Enter Celsius temperature">
+        <button onclick="convertTemperature()">Convert</button>
+        <p>Result: <span id="result"></span>&deg;F</p>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            var celsius = parseFloat(document.getElementById('celsius').value);
+            if (!isNaN(celsius)) {
+                var fahrenheit = (celsius * 9/5) + 32;
+                document.getElementById('result').textContent = fahrenheit.toFixed(2);
+            } else {
+                alert('Please enter a valid number for Celsius temperature.');
+            }
+        }
+    </script>
+</body>
+</html>
